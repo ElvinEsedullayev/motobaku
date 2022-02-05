@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{asset('back')}}/plugins/simplemde/simplemde.min.css">
   @endsection
 @section('content')
+ @if(Auth::user()->detail->status == 'admin')
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
@@ -86,6 +87,7 @@
                 </div>
               </form>
             </div>
+            @endif 
 @endsection
 @section('js')
 <!-- Select2 -->

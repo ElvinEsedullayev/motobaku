@@ -14,7 +14,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{route('admin.about.update')}}" method="POST" enctype="multipart/form-data">
+              <form action="{{route('admin.about.update',$about->id)}}" method="POST" enctype="multipart/form-data">
                    @include('back\layouts\partials\errors')
                    @include('back\layouts\partials\alert')
                 @csrf
@@ -22,11 +22,11 @@
                 <div class="card-body">
                 <div class="form-group">
                     <label for="">Başlıq</label>
-                    <input type="text" class="form-control" id="" value="" name="title">
+                    <input type="text" class="form-control" id="" value="{{old('title',$about->title)}}" name="title">
                   </div>
                    <div class="form-group">
                     <label for="">Alt Başlıq</label>
-                    <input type="text" class="form-control" id="" value="" name="foot_title">
+                    <input type="text" class="form-control" id="" value="{{old('foot_title',$about->foot_title)}}" name="foot_title">
                   </div>
                 
                   <div class="form-group">
@@ -44,7 +44,7 @@
                   </div>
                 <div class="form-group">
                    <div class="card-body">
-              <textarea id="summernote" name="description" class="form-control">sda</textarea>
+              <textarea id="summernote" name="description" class="form-control">{{old('description',$about->description)}}</textarea>
             </div>
                 </div>
 

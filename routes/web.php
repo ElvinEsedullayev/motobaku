@@ -6,7 +6,7 @@ use App\Http\Controllers\Back\AuthController;
 use App\Http\Controllers\Back\UserController;
 use App\Http\Controllers\Back\SettingController;
 use App\Http\Controllers\Back\AboutController;
-
+use App\Http\Controllers\Back\ProductController;
 
 
 Route::get('/', function () {
@@ -34,12 +34,21 @@ Route::group(['prefix'=>'yonetim'],function(){
         Route::post('/user/update/{id}',[UserController::class,'update'])->name('admin.user.update');
         Route::get('/user/delete/{id}',[UserController::class,'delete'])->name('admin.user.delete');
 
+
         Route::get('/setting',[SettingController::class,'index'])->name('admin.setting.index');
         Route::post('/setting/update/{id}',[SettingController::class,'update'])->name('admin.setting.update');
 
 
         Route::get('/about',[AboutController::class,'index'])->name('admin.about.index');
-        Route::post('/about/update',[AboutController::class,'update'])->name('admin.about.update');
+        Route::post('/about/update/{id}',[AboutController::class,'update'])->name('admin.about.update');
+
+
+        Route::get('/products',[ProductController::class,'index'])->name('admin.product.index');
+        Route::get('/product/add',[ProductController::class,'store'])->name('admin.product.store');
+        Route::post('/product/add',[ProductController::class,'create'])->name('admin.product.create');
+        Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('admin.product.edit');
+        Route::post('/product/update/{id}',[ProductController::class,'update'])->name('admin.product.update');
+        Route::get('/product/delete/{id}',[ProductController::class,'delete'])->name('admin.product.delete');
     });
     
     

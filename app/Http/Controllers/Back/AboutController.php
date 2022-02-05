@@ -16,7 +16,7 @@ class AboutController extends Controller
 
     public function update(AboutRequest $request)
     {
-        $about = About::where('id',1);
+        $about = About::find($id);
         $about->title = $request->title;
         $about->foot_title = $request->foot_title;
         $about->description = $request->description;

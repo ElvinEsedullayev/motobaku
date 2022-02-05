@@ -72,6 +72,14 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="{{route('admin.product.index')}}" class="nav-link">
+              <i class="fab fa-product-hunt text-warning"></i>
+              <p>
+                Product
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="{{route('admin.logout')}}" class="nav-link">
               <i class="fas fa-sign-out-alt text-danger"></i>
               <p>
