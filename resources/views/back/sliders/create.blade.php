@@ -1,79 +1,53 @@
 @extends('back.layouts.master')
-@section('title','User Create')
+@section('title','Slider Create')
 @section('css')
   <link rel="stylesheet" href="{{asset('back')}}/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
    <link rel="stylesheet" href="{{asset('back')}}/plugins/summernote/summernote-bs4.min.css">
     <link rel="stylesheet" href="{{asset('back')}}/plugins/simplemde/simplemde.min.css">
   @endsection
 @section('content')
- @if(Auth::user()->detail->status == 'admin')
+
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">User Form</h3>
-                <a href="{{route('admin.user.index')}}" class="btn btn-danger btn-xs float-right"><i class="fas fa-undo"></i> Geri Dön</a>
+                <h3 class="card-title">Slider Form</h3>
+                <a href="{{route('admin.slider.index')}}" class="btn btn-danger btn-xs float-right"><i class="fas fa-undo"></i> Geri Dön</a>
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="{{route('admin.user.update',$user->id)}}" method="POST" enctype="multipart/form-data">
+              <form action="{{route('admin.slider.create')}}" method="POST" enctype="multipart/form-data">
                   @include('back.layouts.partials.errors')
                    @include('back.layouts.partials.alert')
                 @csrf
              
                 <div class="card-body">
                 <div class="form-group">
-                    <label for="">Ad Soyad</label>
-                    <input type="text" class="form-control" id="" value="{{old('name',$user->name)}}" name="name">
+                    <label for="">Başlıq</label>
+                    <input type="text" class="form-control" id="" placeholder="Başlıq" name="title1">
+                  </div>
+                 <div class="form-group">
+                    <label for="">Alt Başlıq</label>
+                    <input type="text" class="form-control" id="" placeholder="Alt Başlıq" name="title2">
                   </div>
                   <div class="form-group">
-                    <label for="">Email addres</label>
-                    <input type="email" class="form-control" id="" value="{{old('email',$user->email)}}" name="email">
+                    <label for="">Sloqan</label>
+                    <input type="text" class="form-control" id="" placeholder="Sloqan" name="slogan">
                   </div>
                   <div class="form-group">
-                    <label for="">Şifrə</label>
-                    <input type="password" class="form-control" id=""  name="password">
+                    <label for="">Video</label>
+                    <input type="text" class="form-control" id="" placeholder="Video" name="video">
                   </div>
-                  
-                  <div class="form-group">
-                    <label for="">İxtisas</label>
-                    <input type="text" class="form-control" id="" value="{{old('specialty',$user->detail->specialty)}}" name="specialty">
-                  </div>
-                <div class="form-group">
-                    <label for="">Adres</label>
-                    <input type="text" class="form-control" id="" value="{{old('adress',$user->detail->adress)}}" name="adress">
-                  </div>
-                   <div class="form-group">
-                    <label for="">Status</label>
-                    <select name="status" id="" class="form-control">
-                      <option @if($user->detail->status == 'admin') selected @endif value="admin">Admin</option>
-                      <option @if($user->detail->status == 'user') selected @endif value="user">User</option>
-                    </select>
-                  </div>
-                <div class="form-group">
-                  <label>Telefon</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                 <div class="form-group">
+                    <label for="exampleInputFile">Kiçik Şəkil</label>
+                    <div class="input-group">
+                      <div class="custom-file">
+                        <input type="file" name="small_image" class="custom-file-input" id="exampleInputFile">
+                        <label class="custom-file-label" for="exampleInputFile">Sekil Sec</label>
+                      </div>
                     </div>
-                    <input type="text" name="phone" value="{{old('phone',$user->detail->phone)}}" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask>
                   </div>
-                </div>
-              <div class="form-group">
-                  <label>Tarix:</label>
-                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                        <input type="date" name="birthday" value="{{old('birthday',$user->detail->birthday)}}" class="form-control datetimepicker-input" data-target="#reservationdate"/>
-                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                    </div>
-                </div>
 
-
-                <input type="hidden" name="old_image" value="{{$user->detail->image}}">
                   <div class="form-group">
-                    @if($user->detail->image != null)
-                    <img src="{{asset('uploads/users/'.$user->detail->image)}}" style="width: 120px; height: 100px; margin-bottom: 10px;" alt="">
-                    @endif
                     <label for="exampleInputFile">Səkil</label>
                     <div class="input-group">
                       <div class="custom-file">
@@ -86,16 +60,15 @@
                 <!-- /.card-body -->
                 <div class="form-group">
                    <div class="card-body">
-              <textarea id="summernote" name="about" class="form-control">{{old('about',$user->detail->about)}}</textarea>
+              <textarea id="summernote" name="description" class="form-control">Açıqlama</textarea>
             </div>
                 </div>
-
+               
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary btn-block">Yenilə</button>
+                  <button type="submit" class="btn btn-primary btn-block">Yarat</button>
                 </div>
               </form>
             </div>
-            @endif 
 @endsection
 @section('js')
 <!-- Select2 -->

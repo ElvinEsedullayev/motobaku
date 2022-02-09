@@ -1,20 +1,21 @@
   <!-- banner start -->
     <div class="banner-area home-banner1">
         <div class="banner-slider banner-slider1">
-            <div class="banner-bg" style="background-image:url({{asset('front')}}/assets/img/bg/1.png);">
+            @foreach($sliders as $slider)
+            <div class="banner-bg" style="background-image:url({{$slider->image}}">
                 <div class="container">
                     <div class="row h-100vh">
                         <div class="col-xl-10 col-lg-10 offset-lg-2 offset-xl-1 col-md-8 offset-md-2">
                             <div class="banner-inner">
-                                <p data-animation-in="fadeInLeft">Growing up in Michigan, I was lucky enough to<br> experience one part of the Great Lakes.</p>
-                                <h1 class="title1" data-animation-in="fadeInDown">Biking</h1>
-                                <h1 class="title2" data-animation-in="fadeInUp">Mountain</h1>
+                                <p data-animation-in="fadeInLeft">{{$slider->description}}</p>
+                                <h1 class="title1" data-animation-in="fadeInDown">{{$slider->title1}}</h1>
+                                <h1 class="title2" data-animation-in="fadeInUp">{{$slider->title2}}</h1>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-       
+            @endforeach
         
           
         </div>
@@ -72,6 +73,7 @@
                             <div class="total-controler">05</div>
                         </div>
                     </div>
+                    
                     <div class="col-xl-3 offset-lg-1 col-lg-4 col-md-6 offset-md-2 col-sm-6 offset-sm-2 col-10 offset-1">
                         <div class="banner-sm-slider d-flex">
                             <div class="slider-image1"><img src="{{asset('front')}}/assets/img/bg/sm1.jpg" alt=""></div>

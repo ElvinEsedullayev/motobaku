@@ -38,7 +38,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('front.home')}}" class="nav-link ">
+                <a href="{{route('front.home')}}" class="nav-link " target="_blank">
                   <i class="fas fa-globe text-info"></i>
                   <p>Moto Website</p>
                 </a>

@@ -87,6 +87,7 @@ class UserController extends Controller
             $dosyadi=$user->id. '-'. time(). '.'. $userimage->extension();
             if($userimage->isValid()){
                 $userimage->move('uploads/users',$dosyadi);
+                
                        UserDetail::updateOrCreate(
                              ['user_id'=>$user->id],
                             ['image'=>$dosyadi]

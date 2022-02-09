@@ -22,9 +22,8 @@
                   <tr>
                     <th>Sıra N</th>
                     <th>Şəkil</th>
-                    <th>Qiymət</th>
-                    <th>Status</th>
-                    <th>Trend</th>
+                    <th>Başlıq</th>
+                    <th>Alt Başlıq</th>
                     <th>İşləmlər</th>
                   </tr>
                   </thead>
@@ -33,18 +32,11 @@
                   <tr>
                     <td>{{$loop->index +1}}</td>
                     <td><img style="width: 100px;" src="{{asset($slider->image)}}" alt=""></td>
-                    <td>{{$slider->price}}</td>
+                    <td>{{$slider->title1}}</td>
+                    <td>{{$slider->title2}}</td>
                     <td>
-                       @if($slider->status == 'aktiv')
-                      <span class="badge bg-success">aktiv</span>
-                      @elseif($proslideruct->status == 'passiv')
-                      <span class="badge bg-danger">passiv</span>
-                      @endif
-                    </td>
-                    <td>{{$slider->trending}}</td>
-                    <td>
-                      <a href="{{route('admin.product.edit',$slider->id)}}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                      <a href="{{route('admin.product.delete',$slider->id)}}" class="btn btn-danger"  data-toggle="tooltip" data-placement="top" title="Sil" onclick="return confirm('Silmək İstədyinizə Əminsiniz?')"><i class="fas fa-trash-alt"></i></a>
+                      <a href="{{route('admin.slider.edit',$slider->id)}}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                      <a href="{{route('admin.slider.delete',$slider->id)}}" class="btn btn-danger"  data-toggle="tooltip" data-placement="top" title="Sil" onclick="return confirm('Silmək İstədyinizə Əminsiniz?')"><i class="fas fa-trash-alt"></i></a>
                     </td>
                   </tr>
                   @endforeach
