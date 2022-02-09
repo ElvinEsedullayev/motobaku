@@ -26,7 +26,8 @@
 
       <form action="{{route('admin.login.post')}}" method="post">
         @csrf
-        @include('back\layouts\partials\errors')
+        @include('back.layouts.partials.errors')
+        @include('back.layouts.partials.alert')
         
         <div class="input-group mb-3">
           <input type="email" name="email" class="form-control" placeholder="Email">

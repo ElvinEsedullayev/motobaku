@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-@include('back\layouts\partials\head')
+@include('back.layouts.partials.head')
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
-  @include('back\layouts\partials\navbar')
-  @include('back\layouts\partials\sidebar')
+  @include('back.layouts.partials.navbar')
+  @include('back.layouts.partials.sidebar')
   <div class="content-wrapper">
     <div class="content-header">
       <div class="container-fluid">
@@ -25,12 +25,12 @@
  @yield('content')
     
   </div>
-  @include('back\layouts\partials\footer')
+  @include('back.layouts.partials.footer')
 
 </div>
 <!-- ./wrapper -->
 
-@include('back\layouts\partials\script')
+@include('back.layouts.partials.script')
 @yield('js')
 </body>
 </html>

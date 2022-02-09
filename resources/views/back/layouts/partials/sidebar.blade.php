@@ -38,9 +38,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link ">
+                <a href="{{route('front.home')}}" class="nav-link ">
                   <i class="fas fa-globe text-info"></i>
-                  <p>Website</p>
+                  <p>Moto Website</p>
                 </a>
               </li>
             </ul>
@@ -76,6 +76,14 @@
               <i class="fab fa-product-hunt text-warning"></i>
               <p>
                 Product
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('admin.slider.index')}}" class="nav-link">
+              <i class="fas fa-photo-video text-warning"></i>
+              <p>
+                Slider
               </p>
             </a>
           </li>

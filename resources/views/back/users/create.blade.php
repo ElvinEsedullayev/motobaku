@@ -1,4 +1,4 @@
-@extends('back\layouts\master')
+@extends('back.layouts.master')
 @section('title','User Create')
 @section('css')
   <link rel="stylesheet" href="{{asset('back')}}/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
@@ -16,7 +16,8 @@
               <!-- /.card-header -->
               <!-- form start -->
               <form action="{{route('admin.user.create')}}" method="POST" enctype="multipart/form-data">
-                   @include('back\layouts\partials\errors')
+                  @include('back.layouts.partials.errors')
+                   @include('back.layouts.partials.alert')
                 @csrf
              
                 <div class="card-body">
