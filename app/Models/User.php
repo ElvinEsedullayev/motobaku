@@ -21,7 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        
+        'usertype',
     ];
 
     /**
@@ -43,8 +43,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    /*
     public function detail()
     {
         return $this->hasOne('App\Models\UserDetail')->withDefault();
     }
+    */
 }

@@ -20,18 +20,18 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Sıra N</th>
+                
                     <th>Şəkil</th>
                     <th>Qiymət</th>
                     <th>Status</th>
-                    <th>Trend</th>
+        
                     <th>İşləmlər</th>
                   </tr>
                   </thead>
                   <tbody>
                     @foreach($products as $product)
                   <tr>
-                    <td>{{$loop->index +1}}</td>
+                   
                     <td><img style="width: 100px;" src="{{asset($product->image)}}" alt=""></td>
                     <td>{{$product->price}}</td>
                     <td>
@@ -41,7 +41,7 @@
                       <span class="badge bg-danger">passiv</span>
                       @endif
                     </td>
-                    <td>{{$product->trending}}</td>
+              
                     <td>
                       <a href="{{route('admin.product.edit',$product->id)}}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                       <a href="{{route('admin.product.delete',$product->id)}}" class="btn btn-danger"  data-toggle="tooltip" data-placement="top" title="Sil" onclick="return confirm('Silmək İstədyinizə Əminsiniz?')"><i class="fas fa-trash-alt"></i></a>

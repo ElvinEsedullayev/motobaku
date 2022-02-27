@@ -8,15 +8,16 @@ use App\Models\About;
 use App\Http\Requests\AboutRequest;
 class AboutController extends Controller
 {
+    
     public function index()
     {
-        $about = About::find(1);
+        $about = About::find(2);
         return view('back.about.index',compact('about'));
     }
 
-    public function update(AboutRequest $request)
+    public function update(AboutRequest $request,$id)
     {
-        $about = About::find($id);
+        $about = About::findOrFail($id);
         $about->title = $request->title;
         $about->foot_title = $request->foot_title;
         $about->description = $request->description;

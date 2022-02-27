@@ -28,10 +28,10 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
         $product->selling_price = $request->selling_price;
-        $product->qty = $request->qty;
+        //$product->qty = $request->qty;
         $product->sku = $request->sku;
         $product->status	 = $request->status	;
-        $product->trending = $request->trending;
+        //$product->trending = $request->trending;
         $product->meta_title = $request->meta_title;
         $product->meta_keyword = $request->meta_keyword;
         $product->meta_description = $request->meta_description;
@@ -58,10 +58,10 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
         $product->selling_price = $request->selling_price;
-        $product->qty = $request->qty;
+        //$product->qty = $request->qty;
         $product->sku = $request->sku;
         $product->status	 = $request->status	;
-        $product->trending = $request->trending;
+        //$product->trending = $request->trending;
         $product->meta_title = $request->meta_title;
         $product->meta_keyword = $request->meta_keyword;
         $product->meta_description = $request->meta_description;

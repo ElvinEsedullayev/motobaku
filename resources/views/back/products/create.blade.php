@@ -37,14 +37,8 @@
                     <label for="">Sku</label>
                     <input type="text" class="form-control" id="" placeholder="Sku" name="sku">
                   </div>
-                  <div class="form-group">
-                    <label for="">Ədəd</label>
-                    <input type="text" class="form-control" id="" placeholder="Ədəd" name="qty">
-                  </div>
-                  <div class="form-group">
-                    <label for="">Trend</label>
-                    <input type="text" class="form-control" id="" placeholder="Trend" name="trending">
-                  </div>
+               
+                
                    <div class="form-group">
                     <label for="">Status</label>
                     <select name="status" id="" class="form-control">

@@ -22,11 +22,11 @@
                 <div class="card-body">
                 <div class="form-group">
                     <label for="">Başlıq</label>
-                    <input type="text" class="form-control" id="" value="{{old('title',$about->title)}}" name="title">
+                    <input type="text" class="form-control" id="" value="{{ optional($about)->getAttribute('title') }}" name="title">
                   </div>
                    <div class="form-group">
                     <label for="">Alt Başlıq</label>
-                    <input type="text" class="form-control" id="" value="{{old('foot_title',$about->foot_title)}}" name="foot_title">
+                    <input type="text" class="form-control" id="" value="{{ optional($about)->getAttribute('foot_title') }}" name="foot_title">
                   </div>
                 
                   <div class="form-group">

@@ -37,14 +37,8 @@
                     <label for="">Sku</label>
                     <input type="text" class="form-control" id="" value="{{old('sku',$product->sku)}}" name="sku">
                   </div>
-                  <div class="form-group">
-                    <label for="">Ədəd</label>
-                    <input type="text" class="form-control" id="" value="{{old('qty',$product->qty)}}" name="qty">
-                  </div>
-                  <div class="form-group">
-                    <label for="">Trend</label>
-                    <input type="text" class="form-control" id="" value="{{old('trending',$product->trending)}}" name="trending">
-                  </div>
+               
+               
                    <div class="form-group">
                     <label for="">Status</label>
                     <select name="status" id="" class="form-control">

@@ -22,10 +22,8 @@ class CreateProductsTable extends Migration
             $table->longText('description')->nullable();
             $table->string('price')->nullable();
             $table->string('selling_price')->nullable();
-            $table->string('qty')->nullable();
             $table->string('sku')->nullable();
             $table->enum('status',['aktiv','passiv'])->default('passiv')->nulalble();
-            $table->tinyInteger('trending')->nullable();
             $table->mediumText('meta_title')->nullable();
             $table->mediumText('meta_keyword')->nullable();
             $table->mediumText('meta_description')->nullable();

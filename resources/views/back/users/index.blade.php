@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="{{asset('back')}}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   @endsection
 @section('content')
- @if(Auth::user()->detail->status == 'admin')
+ 
  
 <div class="card">
               <div class="card-header">
@@ -20,28 +20,28 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Sıra N</th>
+               
                     <th>Ad</th>
                     <th>Email</th>
                     <th>Status</th>
-                    <th>Adress</th>
+               
                     <th>İşləmlər</th>
                   </tr>
                   </thead>
                   <tbody>
                     @foreach($users as $user)
                   <tr>
-                    <td>{{$loop->index +1}}</td>
+                   {{-- <td>{{$loop->index +1}}</td> --}}
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>
-                      @if($user->detail->status == 'admin')
+                      @if($user->usertype == 1)
                       <span class="badge bg-success">admin</span>
-                      @elseif($user->detail->status == 'user')
+                      @elseif($user->usertype == 0)
                       <span class="badge bg-danger">user</span>
                       @endif
                     </td>
-                    <td>{{$user->detail->adress}}</td>
+                  
                     <td>
                       <a href="{{route('admin.user.edit',$user->id)}}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                       <a href="{{route('admin.user.delete',$user->id)}}" class="btn btn-danger"  data-toggle="tooltip" data-placement="top" title="Sil" onclick="return confirm('Silmək İstədyinizə Əminsiniz?')"><i class="fas fa-trash-alt"></i></a>
@@ -52,7 +52,7 @@
               </div>
               <!-- /.card-body -->
             </div>
-   @endif    
+  
 @endsection
 @section('js')
 <script src="{{asset('back')}}/plugins/datatables/jquery.dataTables.min.js"></script>

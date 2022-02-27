@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{asset('back')}}/plugins/simplemde/simplemde.min.css">
   @endsection
 @section('content')
- @if(Auth::user()->detail->status == 'admin')
+
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
@@ -33,62 +33,27 @@
                     <label for="">Şifrə</label>
                     <input type="password" class="form-control" id="" placeholder="Şifrə" name="password">
                   </div>
-                  <div class="form-group">
-                    <label for="">İxtisas</label>
-                    <input type="text" class="form-control" id="" placeholder="İxtisas" name="specialty">
-                  </div>
-                <div class="form-group">
-                    <label for="">Adres</label>
-                    <input type="text" class="form-control" id="" placeholder="Adres" name="adres">
-                  </div>
+            
+               
                    <div class="form-group">
                     <label for="">Status</label>
                     <select name="status" id="" class="form-control">
-                      <option value="admin">Admin</option>
-                      <option value="user">User</option>
+                      <option value="1">Admin</option>
+                      <option value="0">User</option>
                     </select>
                   </div>
-                <div class="form-group">
-                  <label>Telefon</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                    </div>
-                    <input type="text" name="phone" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask>
-                  </div>
+       
+        
+            
                 </div>
-              <div class="form-group">
-                  <label>Tarix:</label>
-                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                        <input type="date" name="birthday" class="form-control datetimepicker-input" data-target="#reservationdate"/>
-                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                    </div>
-                </div>
-                  <div class="form-group">
-                    <label for="exampleInputFile">Səkil</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" name="image" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Sekil Sec</label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- /.card-body -->
-                <div class="form-group">
-                   <div class="card-body">
-              <textarea id="summernote" name="about" class="form-control">Haqqında</textarea>
-            </div>
-                </div>
+         
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary btn-block">Yarat</button>
                 </div>
               </form>
             </div>
-            @endif 
+           
 @endsection
 @section('js')
 <!-- Select2 -->

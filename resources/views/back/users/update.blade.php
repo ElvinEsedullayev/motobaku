@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="{{asset('back')}}/plugins/simplemde/simplemde.min.css">
   @endsection
 @section('content')
- @if(Auth::user()->detail->status == 'admin')
+
             <!-- general form elements -->
             <div class="card card-primary">
               <div class="card-header">
@@ -34,68 +34,29 @@
                     <input type="password" class="form-control" id=""  name="password">
                   </div>
                   
-                  <div class="form-group">
-                    <label for="">İxtisas</label>
-                    <input type="text" class="form-control" id="" value="{{old('specialty',$user->detail->specialty)}}" name="specialty">
-                  </div>
-                <div class="form-group">
-                    <label for="">Adres</label>
-                    <input type="text" class="form-control" id="" value="{{old('adress',$user->detail->adress)}}" name="adress">
-                  </div>
+            
+            
                    <div class="form-group">
                     <label for="">Status</label>
-                    <select name="status" id="" class="form-control">
-                      <option @if($user->detail->status == 'admin') selected @endif value="admin">Admin</option>
-                      <option @if($user->detail->status == 'user') selected @endif value="user">User</option>
+                    <select name="usertype" id="" class="form-control">
+                      <option @if($user->usertype == 1) selected @endif value="1">Admin</option>
+                      <option @if($user->usertype == 0) selected @endif value="0">User</option>
                     </select>
                   </div>
-                <div class="form-group">
-                  <label>Telefon</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="fas fa-phone"></i></span>
-                    </div>
-                    <input type="text" name="phone" value="{{old('phone',$user->detail->phone)}}" class="form-control" data-inputmask='"mask": "(999) 999-9999"' data-mask>
-                  </div>
-                </div>
-              <div class="form-group">
-                  <label>Tarix:</label>
-                    <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                        <input type="date" name="birthday" value="{{old('birthday',$user->detail->birthday)}}" class="form-control datetimepicker-input" data-target="#reservationdate"/>
-                        <div class="input-group-append" data-target="#reservationdate" data-toggle="datetimepicker">
-                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-                        </div>
-                    </div>
-                </div>
+        
+         
 
-
-                <input type="hidden" name="old_image" value="{{$user->detail->image}}">
-                  <div class="form-group">
-                    @if($user->detail->image != null)
-                    <img src="{{asset('uploads/users/'.$user->detail->image)}}" style="width: 120px; height: 100px; margin-bottom: 10px;" alt="">
-                    @endif
-                    <label for="exampleInputFile">Səkil</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" name="image" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Sekil Sec</label>
-                      </div>
-                    </div>
-                  </div>
+             
                 </div>
-                <!-- /.card-body -->
-                <div class="form-group">
-                   <div class="card-body">
-              <textarea id="summernote" name="about" class="form-control">{{old('about',$user->detail->about)}}</textarea>
-            </div>
-                </div>
+                
+        
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary btn-block">Yenilə</button>
                 </div>
               </form>
             </div>
-            @endif 
+     
 @endsection
 @section('js')
 <!-- Select2 -->

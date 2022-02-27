@@ -10,7 +10,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="{{asset('uploads/users')}}/{{Auth::user()->detail->image}}" class="img-circle elevation-2" alt="User Image">
+          <img src="" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">{{Auth::user()->name}} </a>
@@ -45,7 +45,7 @@
               </li>
             </ul>
           </li>
-          @if(Auth::user()->detail->status == 'admin')
+    
            <li class="nav-item">
             <a href="{{route('admin.user.index')}}" class="nav-link">
               <i class="fas fa-users text-warning"></i>
@@ -54,7 +54,7 @@
               </p>
             </a>
           </li>
-          @endif
+        
           <li class="nav-item">
             <a href="{{route('admin.setting.index')}}" class="nav-link">
               <i class="fas fa-cogs text-warning"></i>

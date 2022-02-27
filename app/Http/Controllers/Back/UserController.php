@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::with('detail')->get();
+        $users = User::get();
         
         return view('back.users.index',compact('users'));
     }
@@ -32,11 +32,12 @@ class UserController extends Controller
         if($validator->fails()){
             return redirect()->route('admin.user.store')->withErrors($validator)->withInput();
         }
-        $data = $request->only(['name','email','about','phone','adres','specialty','status','birthday']);
+        $data = $request->only(['name','email','usertype']);
         if($request->filled('password')){
             $data['password']=Hash::make($request->post('password'));
         }
         $user = User::create($data);
+        /*
         if($request->hasFile('image')){
             Validator::make($request->post(),[
                 'image'=>'image|mimes:jpeg,png,jpg,gif|max:5000'
@@ -52,31 +53,34 @@ class UserController extends Controller
                         );
             }
         }
+        */
         return redirect()->route('admin.user.index')->with('success','İstifadəçi uğurlu şəkildə yaradıldı !');
     }
 
     public function edit($id)
     {
-        $user = User::with('detail')->find($id);
+        $user = User::find($id);
         return view('back.users.update',compact('user'));
     }
 
 
     public function update($id)
     {
+        //return request()->all();
         $validator = $this->validate(request(),[
             'name'=>'required|min:5',
             'email'=>'required',
         ]);
       
-        $data = request()->only(['name','email']);
-        $data_detay =request()->only(['about','adress','phone','birthday','specialty','status']);
+        $data = request()->only(['name','email','usertype']);
+        //$data_detay =request()->only(['about','adress','phone','birthday','specialty','status']);
         if(request()->filled('password')){//eger sifre dolu ise
             $data['password']=Hash::make(request('password'));
         }
         $user = User::where('id',$id)->firstOrFail();
        
         $user->update($data);
+        /*
         $user->detail->update($data_detay);
                 if(request()->hasFile('image')){
             $validator= $this->validate(request(),[
@@ -94,13 +98,14 @@ class UserController extends Controller
                         );
             }
         }
+        */
         return redirect()->back()->with('success','İstifadəçi məlumatları güncəlləndi !');
     }
 
      public function delete($id)
     {
         $user= User::find($id);
-        $user->detail()->delete();
+        //$user->detail()->delete();
         $user->delete();
         return redirect()->route('admin.user.index')->with('success','İstifadəçi uğurlu şəkildə silindi !'); 
     }

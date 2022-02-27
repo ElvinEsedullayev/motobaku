@@ -9,8 +9,10 @@ class UserDetail extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    /*
     public function user()
     {
         $this->belongsTo('App\Models\User');
     }
+    */
 }
