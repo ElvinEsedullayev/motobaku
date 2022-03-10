@@ -15,10 +15,11 @@ class AuthController extends Controller
 
     public function login(AuthRequest $request)
     {
-        if(Auth::attempt(['email' => $request->email, 'password' => $request->password])){
+        //dd ($request->all());
+        if(Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])){
             return redirect()->route('admin.home');
         }else{
-            return redirect()->back()->withErrors('Login və ya Parol səhvdir');
+            return back()->withErrors('Login və ya Parol səhvdir');
         }
     }
 

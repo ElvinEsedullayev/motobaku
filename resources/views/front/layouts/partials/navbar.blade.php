@@ -82,6 +82,7 @@
                         </li>
                         <li>
                             <div class="humberger-wrapper d-none d-lg-block">
+
                                 <div role="navigation" class="humberger-menu">
                                     <div id="menuToggle">
                                         <input type="checkbox" />
@@ -90,12 +91,29 @@
                                         <span></span>
                                         
                                         <ul id="menu">
-                                            <li><a href="signin.html">Sign In</a></li>
-                                            <li><a href="signup.html">Sign Up</a></li>
-                                            <li><a href="contact.html">Contact Us</a></li>
+                                             @if (Route::has('login'))
+                                            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                                            @auth
+                                            <li>
+                                            <a href="" class="text-sm text-gray-700 dark:text-gray-500 underline">{{Auth::guard('web')->user()->name}}</a></li>
+                                             <li>
+                                            <a href="{{ url('/front/logout') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Logout</a></li>
+                                            @else
+                                            
+                                            <li><a href="{{route('login')}}">Sign In</a></li>
+                                            @if (Route::has('register'))
+                                            <li><a href="{{route('register')}}">Sign Up</a></li>
+                                            @endif
+                                            @endauth
+                                            </div>
+                                            @endif
+                                            
+                                            
+                                          
                                         </ul>
                                     </div>
                                 </div>
+
                             </div>
                         </li>
                     </ul>
