@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Front\HomepageController;
 use App\Http\Controllers\Front\FrontAuthController;
+use App\Http\Controllers\Front\SocialController;
 
 
 ############################ BACK ###################################
@@ -69,6 +70,13 @@ Route::group(['prefix' => 'admin'],function(){
         
 Route::get('/',[HomepageController::class,'index'])->name('front.home');
 Route::get('/about',[HomepageController::class,'about'])->name('front.about');
+
+Route::get('/login/facebook',[SocialController::class,'facebookRedirect']);
+Route::get('/login/facebook/callback',[SocialController::class,'loginWithFacebook']);
+
+Route::get('/login/google',[SocialController::class,'googleRedirect']);
+Route::get('/login/google/callback',[SocialController::class,'loginWithGoogle']);
+
 Route::get('/front/logout',[FrontAuthController::class,'logout']);
     
         

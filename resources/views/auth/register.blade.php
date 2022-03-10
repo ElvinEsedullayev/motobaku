@@ -135,9 +135,9 @@
                         </div>
                         <div class="action">
                             <div class="action-left">
-                                <p>Sign in with <a href="https://www.facebook.com/" class="facebook">Facebook</a></p>
+                                <p>Sign in with <a href="{{url('login/facebook')}}" class="facebook">Facebook</a></p>
                                 <span class="or">Or</span>
-                                <p>Sign in with <a href="https://mail.google.com/mail/" class="gmail">Gmail</a></p>
+                                <p>Sign in with <a href="{{url('login/google')}}" class="gmail">Gmail</a></p>
                             </div>
                             <div class="btn-wrapper desktop-right">
                                 <button href="#" type="submit" class="btn sm-btn text-white">Sign Up</button>
