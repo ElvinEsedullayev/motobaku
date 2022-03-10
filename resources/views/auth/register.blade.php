@@ -129,6 +129,10 @@
                         <div class="form-group">
                             <input class="form-control" placeholder="Confirm Password" name="password_confirmation" type="password" value="">
                         </div>
+                        <div class="form-group">
+                           {!! NoCaptcha::renderJs() !!}
+                           {!! NoCaptcha::display() !!}
+                        </div>
                         <div class="action">
                             <div class="action-left">
                                 <p>Sign in with <a href="https://www.facebook.com/" class="facebook">Facebook</a></p>
